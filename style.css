@@ -135,13 +135,25 @@ section {
 }
 
 .profile-photo {
-    width: 430px;
-    height: 500px;
-    object-fit: cover;
-    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
     display: block;
-    border: none;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+    object-fit: contain;
+
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 55%,
+        rgba(0,0,0,0.8) 70%,
+        transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 55%,
+        rgba(0,0,0,0.8) 70%,
+        transparent 100%
+    );
 }
 
 .section {
