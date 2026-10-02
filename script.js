@@ -1,1 +1,12 @@
-const menu=document.querySelector('.menu');const nav=document.querySelector('#navLinks');if(menu&&nav)menu.addEventListener('click',()=>nav.classList.toggle('open'));document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));const year=document.querySelector('#year');if(year)year.textContent=new Date().getFullYear();const slider=document.querySelector('#projectSlider'),prev=document.querySelector('.slide-btn.prev'),next=document.querySelector('.slide-btn.next');if(slider&&prev&&next){const step=()=>Math.max(280,slider.clientWidth*.55);prev.addEventListener('click',()=>slider.scrollBy({left:-step(),behavior:'smooth'}));next.addEventListener('click',()=>slider.scrollBy({left:step(),behavior:'smooth'}));}
+function scrollProjects(direction) {
+
+    const slider = document.getElementById("projectSlider");
+
+    const scrollAmount = 400;
+
+    slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: "smooth"
+    });
+
+}
