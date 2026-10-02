@@ -134,24 +134,34 @@ section {
     align-items: center;
 }
 
-.profile-photo {
+.profile-photo-wrap {
     position: relative;
-    z-index: 1;
+    width: 430px;
+    max-width: 100%;
+}
+
+.profile-photo {
     width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
 
-    mask-image: radial-gradient(
-        ellipse at center,
-        black 55%,
-        rgba(0,0,0,0.8) 70%,
+    /* Blur/fade only at the bottom */
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 78%,
+        rgba(0, 0, 0, 0.9) 86%,
+        rgba(0, 0, 0, 0.5) 94%,
         transparent 100%
     );
-    -webkit-mask-image: radial-gradient(
-        ellipse at center,
-        black 55%,
-        rgba(0,0,0,0.8) 70%,
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 78%,
+        rgba(0, 0, 0, 0.9) 86%,
+        rgba(0, 0, 0, 0.5) 94%,
         transparent 100%
     );
 }
